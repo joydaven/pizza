@@ -12,7 +12,7 @@ import os
 from django.core.wsgi import get_wsgi_application
 from dotenv import load_dotenv
 
-project_folder = os.path.expanduser('/challenge/pizza')  # adjust as appropriate
+project_folder = os.path.expanduser('/root/challenge/pizza')  # adjust as appropriate
 
 load_dotenv(os.path.join(project_folder, '.env'))
 

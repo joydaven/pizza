@@ -5,14 +5,14 @@ import sys
 
 from django.core.wsgi import get_wsgi_application
 from dotenv import load_dotenv
-project_folder = os.path.expanduser('/challenge/pizza')  # adjust as appropriate
+project_folder = os.path.expanduser('/root/challenge/pizza')  # adjust as appropriate
 load_dotenv(os.path.join(project_folder, '.env'))
 
 def main():
     # this changes according to .env settings
     CURRENT_ENVIRONMENT = 'pizza.settings_' + os.getenv("ENVIRONMENT")
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pizza.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', CURRENT_ENVIRONMENT)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
